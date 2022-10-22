@@ -1,0 +1,30 @@
+<style type="text/css">
+.buttonToLink{
+   background: none;
+   border: none;
+   color: #ffffff;
+   font-weight: bold;
+   margin-right: 20px;
+}
+
+.buttonToLink:hover{
+   background: none;
+   text-decoration: none;
+}
+</style>
+
+
+<div class="items">
+          <ul class="nav navbar-right top-nav">        
+            <li class="editpro">
+              <i class="fasett fa-cog menu-button" aria-hidden="true" id="menu-button"></i> 
+              <li class="nav-item">
+       <!--  <span class="text-uppercase nav-link font-weight-bold" th:text="${@environment.getProperty('environment')}" style="color: #fff;"></span> -->
+       <form th:action="@{/logout/}" method="POST" >
+    		<input type="submit" class="buttonToLink" value="LOGOUT">
+	</form>
+       
+      </li>
+            </li>
+          </ul>
+        </div>

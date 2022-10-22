@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-ZA" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Demo</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+        <div class="container">
+                                                
+                            
+                                <div class="wrapper fadeInDown">
+                              
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <div th:if="${param.error}">
+                        <div class="alert alert-danger">Invalid username or
+                            password.</div>
+                    </div>
+                    
+                    <div th:if="${param.logout}">
+                        <div class="alert alert-info">
+                         You have been logged out.</div>
+                    </div>
+    </div>
+
+    <!-- Login Form -->
+    <form th:action=@{/authenticate/} method="POST">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Enter username">
+      <input type="password" id="password" class="fadeIn second" name="password" placeholder="Enter password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+ </form>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/forgot-password/">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+                           
+                           
+                           
+        </div>
+</body>
+</html>
